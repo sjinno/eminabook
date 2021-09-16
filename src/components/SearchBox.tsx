@@ -9,6 +9,7 @@ const SearchBox = () => {
 
     const fetchAnimeHandler = () => {
         // alert(`Hello, ${searchInput}!`);
+        setSearchInput('');
     };
 
     return (
