@@ -15,8 +15,27 @@ body {
     font-size: 1.5rem;
 }
 
+img {
+    height: 28rem;
+    object-fit: cover;
+}
+
 .title {
     font-family: $headerFont;
     font-weight: 600;
     font-size: 2.8rem;
+    text-align: center;
+}
+
+/* bootstrap */
+.carousel-control-prev,
+.carousel-control-prev:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.carousel-control-next,
+.carousel-control-next:hover {
+    text-decoration: none;
+    color: black;
 }
