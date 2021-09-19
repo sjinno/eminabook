@@ -3,7 +3,7 @@
 // https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1
 export const popularAnimeUri = (): string =>
     encodeURI(
-        'https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1',
+        'https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1&type=tv',
     );
 
 // Search anime
@@ -13,7 +13,7 @@ export const popularAnimeUri = (): string =>
 // https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1&status=upcoming
 export const upcomingAnimeUri = (): string =>
     encodeURI(
-        'https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1&status=upcoming',
+        'https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1&status=upcoming&type=tv',
     );
 
 // New anime
@@ -22,7 +22,7 @@ export const newAnimeUri = (): string => {
     const startDate = '2021-08-16';
     const endDate = '2021-09-16';
     return encodeURI(
-        `https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1&start_date=${startDate}&end_date=${endDate}`,
+        `https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1&start_date=${startDate}&end_date=${endDate}&type=tv`,
     );
 };
 

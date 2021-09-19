@@ -3,20 +3,17 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// Redux setup ======
-import { createStore, applyMiddleware, compose } from 'redux';
-import { store } from './ducks-modern/app/store';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
+// Styles
+import GlobalStyles from './globalStyles';
 
-// Redux dev setup =====
-const composeEnhancer =
-    (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-// const store = createStore(allReducers, composeEnhancer(applyMiddleware(thunk)));
+// Redux setup ======
+import { store } from './ducks/app/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
+            <GlobalStyles />
             <App />
         </Provider>
     </React.StrictMode>,

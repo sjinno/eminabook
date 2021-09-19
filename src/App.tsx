@@ -1,17 +1,23 @@
 import React from 'react';
-
-// Styles
-import './App.scss';
+import styled from 'styled-components';
 
 // Components / Pages
-import Main from './components/Main';
+import Header from './components/Header';
+import AnimeList from './components/AnimeList';
 
 function App() {
     return (
-        <div className="App">
-            <Main />
-        </div>
+        <AppBody>
+            <Header />
+            <AnimeList />
+        </AppBody>
     );
 }
+
+const AppBody = styled.div`
+    font-family: var(--main-font);
+    color: var(--clr-black);
+    padding: 1rem;
+`;
 
 export default App;
