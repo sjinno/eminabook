@@ -1,11 +1,11 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
 import axios from 'axios';
 import { popularAnimeUri } from './animeAPI';
 
 interface AnimeField {
-    mal_id: number;
+    mal_id: string;
     image_url: string;
     title: string;
     episodes: number;
@@ -26,6 +26,7 @@ const initialState: AnimeState = {
 export const fetchPopularAnimeAsync = createAsyncThunk(
     'anime/fetchPopularAnime',
     async () => {
+        // console.log(popularAnimeUri());
         const response = await axios.get(popularAnimeUri());
         // The value we return becomes the `fulfilled` action payload
         return response.data.results;

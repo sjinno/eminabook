@@ -20,7 +20,7 @@ export default function SearchBox() {
                         setTextInput(evt.currentTarget.value)
                     }
                     type="text"
-                    placeholder="Search anime"
+                    placeholder="Search Anime"
                 />
             </StyledForm>
         </div>

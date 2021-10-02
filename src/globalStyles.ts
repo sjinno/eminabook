@@ -25,6 +25,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-size: 1.3rem;
+        font-family: var(---main-font);
     }
 `;
 

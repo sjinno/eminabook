@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { AnimateSharedLayout, AnimatePresence, motion } from 'framer-motion';
 
 import { useAppSelector, useAppDispatch } from '../ducks/app/hooks';
 import {
@@ -19,7 +20,7 @@ const Anime = (): JSX.Element => {
     console.log(popular);
 
     const loadMoreHandler = () => {
-        setCount((prev) => prev + 5);
+        setCount((prev) => prev + 10);
     };
 
     return (
@@ -36,10 +37,13 @@ const Anime = (): JSX.Element => {
                     </AnimeBriefInfo>
                 </AnimeCard>
             ))}
-            {count !== 50 ? (
-                <LoadButton onClick={loadMoreHandler}>Load more</LoadButton>
+            {count < 50 ? (
+                <div>
+                    <LoadButton onClick={loadMoreHandler}>Load More</LoadButton>
+                    <LoadButton onClick={() => setCount(5)}>Close</LoadButton>
+                </div>
             ) : (
-                <button onClick={() => setCount(10)}>Close</button>
+                <LoadButton onClick={() => setCount(5)}>Close</LoadButton>
             )}
         </div>
     );
@@ -78,12 +82,12 @@ const LoadButton = styled.button`
     display: block;
     width: 22.2rem;
     margin: 0 auto;
-    padding: 2rem 0;
-    font-size: 2.2rem;
+    padding: 1rem 0;
+    font-size: 1.5rem;
     font-weight: 700;
     background-color: var(--clr-black);
     color: white;
-    text-transform: uppercase;
     letter-spacing: 0.2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    text-transform: uppercase;
 `;

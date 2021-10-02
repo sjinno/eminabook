@@ -21,7 +21,7 @@ const Title = styled.div`
 `;
 
 const HeaderContainer = styled.div`
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
 
     display: flex;
     flex-direction: column;

@@ -1,11 +1,17 @@
 import Anime from './Anime';
+import styled from 'styled-components';
 
 const AnimeList = (): JSX.Element => {
     return (
-        <div>
+        <AnimeLs>
             <Anime />
-        </div>
+        </AnimeLs>
     );
 };
+
+const AnimeLs = styled.div`
+    width: 92%;
+    margin: 0 auto;
+`;
 
 export default AnimeList;
