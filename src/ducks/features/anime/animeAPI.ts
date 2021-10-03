@@ -8,6 +8,8 @@ export const popularAnimeUri = (): string =>
 
 // Search anime
 // https://api.jikan.moe/v3/search/anime?q={anime title}
+export const queriedAnimeUri = (anime: string): string =>
+    encodeURI(`https://api.jikan.moe/v3/search/anime?q=${anime}`);
 
 // Upcoming anime
 // https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1&status=upcoming
