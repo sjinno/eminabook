@@ -1,1 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&display=swap');
+
+:root {
+    --clr-yellow: #ffbe0b;
+    --clr-orange: #fb5607;
+    --clr-pink: #ff006e;
+    --clr-purple: #8338ec;
+    --clr-blue: #3a86ff;
+    --clr-black: #202020;
+
+    --main-font: 'Maven Pro';
+}

@@ -8,24 +8,14 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
-    :root {
-        --clr-yellow: #ffbe0b;
-        --clr-orange: #fb5607;
-        --clr-pink: #ff006e;
-        --clr-purple: #8338ec;
-        --clr-blue: #3a86ff;
-        --clr-black: #202020;
-
-        --main-font: 'Manrope', 'Helvetica', sans-serif;
-    }
-
     html {
         font-size: 62.5%;
     }
 
     body {
-        font-size: 1.3rem;
-        font-family: var(---main-font);
+        font-size: 1.5rem;
+        font-family: var(--main-font);
+        color: var(--clr-black);
     }
 `;
 

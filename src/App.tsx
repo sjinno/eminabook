@@ -1,23 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Components / Pages
-import Header from './components/Header';
-import AnimeList from './components/AnimeList';
+import Title from './components/Title';
+import SearchForm from './components/SearchForm';
 
 function App() {
     return (
-        <AppBody>
-            <Header />
-            <AnimeList />
-        </AppBody>
+        <div>
+            <Title />
+            <SearchForm />
+            Hello, world!
+        </div>
     );
 }
-
-const AppBody = styled.div`
-    font-family: var(--main-font);
-    color: var(--clr-black);
-    padding: 1rem;
-`;
 
 export default App;
