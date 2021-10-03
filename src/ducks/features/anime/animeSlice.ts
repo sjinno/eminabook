@@ -79,3 +79,4 @@ export const selectPopular = (state: RootState) => state.anime.popular;
 export const selectQueried = (state: RootState) => state.anime.queried;
 
 export default animeSlice.reducer;
+export type { AnimeField };

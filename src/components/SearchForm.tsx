@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 // Anime API
@@ -8,10 +8,13 @@ import {
     fetchQueriedAnimeAsync,
 } from '../ducks/features/anime/animeSlice';
 
+// Components
+import Anime from './Anime';
+
 const SearchForm = () => {
     // State
     const [searchInput, setSearchInput] = useState('');
-    const [limit, setLimit] = useState(5);
+    const [limit, setLimit] = useState(6);
 
     const queried = useAppSelector(selectQueried);
     const dispatch = useAppDispatch();
@@ -22,10 +25,12 @@ const SearchForm = () => {
 
     const handleSubmittedForm = (evt: React.FormEvent<HTMLFormElement>) => {
         evt.preventDefault();
-        // console.log(searchInput);
         dispatch(fetchQueriedAnimeAsync(searchInput));
-        // console.log(queried);
         setSearchInput('');
+    };
+
+    const handleLoadMore = () => {
+        setLimit((prev) => prev + 6);
     };
 
     return (
@@ -40,18 +45,13 @@ const SearchForm = () => {
                 <StyledButton type="submit" value="boom" />
             </form>
 
-            {queried.slice(0, limit).map((anime, idx) => (
-                <div key={anime.mal_id}>
-                    <p>
-                        <b>{idx + 1}.</b>
-                    </p>
-                    <img src={anime.image_url} alt="" />
-                    <div>
-                        <p>{anime.title}</p>
-                        <p>Episodes: {anime.episodes}</p>
-                    </div>
-                </div>
-            ))}
+            <AnimeWrapper>
+                {queried.slice(0, limit).map((anime, idx) => (
+                    <Anime key={anime.mal_id} {...anime} />
+                ))}
+                <button onClick={handleLoadMore}>load more</button>
+                <button onClick={() => setLimit(6)}>close</button>
+            </AnimeWrapper>
         </div>
     );
 };
@@ -66,6 +66,12 @@ const StyledButton = styled.input`
     color: white;
     font-weight: 600;
     padding: 0.5rem 1.5rem;
+`;
+
+const AnimeWrapper = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
 `;
 
 export default SearchForm;
