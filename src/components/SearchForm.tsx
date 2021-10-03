@@ -25,7 +25,7 @@ const SearchForm = () => {
 
     const handleSubmittedForm = (evt: React.FormEvent<HTMLFormElement>) => {
         evt.preventDefault();
-        dispatch(fetchQueriedAnimeAsync(searchInput));
+        if (searchInput) dispatch(fetchQueriedAnimeAsync(searchInput));
         setSearchInput('');
     };
 
@@ -35,7 +35,7 @@ const SearchForm = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmittedForm}>
+            <StyledForm onSubmit={handleSubmittedForm}>
                 <StyledInput
                     type="text"
                     placeholder="search anime"
@@ -43,21 +43,28 @@ const SearchForm = () => {
                     onChange={handleSearchInput}
                 />
                 <StyledButton type="submit" value="boom" />
-            </form>
+            </StyledForm>
 
             <AnimeWrapper>
                 {queried.slice(0, limit).map((anime, idx) => (
                     <Anime key={anime.mal_id} {...anime} />
                 ))}
-                <button onClick={handleLoadMore}>load more</button>
-                <button onClick={() => setLimit(6)}>close</button>
             </AnimeWrapper>
+            <button onClick={handleLoadMore}>load more</button>
+            <button onClick={() => setLimit(6)}>close</button>
         </div>
     );
 };
 
+const StyledForm = styled.form`
+    display: flex;
+    justify-content: center;
+    padding-block: 2rem;
+`;
+
 const StyledInput = styled.input`
     font-family: var(--main-font);
+    padding-inline: 1rem;
 `;
 
 const StyledButton = styled.input`
@@ -66,12 +73,16 @@ const StyledButton = styled.input`
     color: white;
     font-weight: 600;
     padding: 0.5rem 1.5rem;
+    cursor: pointer;
 `;
 
 const AnimeWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, 15rem);
     gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding-block: 2rem;
 `;
 
 export default SearchForm;

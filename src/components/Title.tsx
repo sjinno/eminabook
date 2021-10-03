@@ -4,9 +4,11 @@ const Title = () => {
     return <StyledTitle>eminabook</StyledTitle>;
 };
 
-const StyledTitle = styled.div`
-    font-weight: 600;
-    font-size: 2rem;
+const StyledTitle = styled.h1`
+    font-size: 2.8rem;
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
 `;
 
 export default Title;
