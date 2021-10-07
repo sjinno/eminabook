@@ -7,7 +7,6 @@ const Title = () => {
 const StyledTitle = styled.h1`
     font-size: 2.8rem;
     text-align: center;
-    padding-top: 6rem;
     padding-bottom: 1.5rem;
 `;
 
