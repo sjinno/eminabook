@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { AnimeField } from '../ducks/features/anime/animeSlice';
 import Anime from './Anime';
 
+// Framer
+
 interface Props {
     queried: AnimeField[];
 }
@@ -35,7 +37,7 @@ const AnimeResults: FC<Props> = ({ queried }) => {
 const AnimeWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, 15rem);
-    gap: 1.5rem;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
     padding-block: 2rem;

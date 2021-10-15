@@ -15,6 +15,11 @@ function App() {
 
 const AppBody = styled.div`
     padding-block: 6rem;
+
+    @media screen and (min-width: 1024px) {
+        width: 768px;
+        margin: 0 auto;
+    }
 `;
 
 export default App;
